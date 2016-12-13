@@ -9,4 +9,4 @@ The proxy then queries the storage engine to see if a copy has been archived. If
 The default storage engine is the Internet Archive. The default redirect engine is hypothes.is.
 
 #Credits
-Cemmento was written by Martin Paul Eve and Alex Gil. It is copyright 2016. With thanks to Ben Arminton for a design chat.
+Cemmento was written by Martin Paul Eve and Alex Gil. It is copyright 2016. With thanks to Ben Armintor for a design chat.
