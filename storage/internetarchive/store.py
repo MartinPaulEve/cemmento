@@ -1,9 +1,9 @@
 from storage.internetarchive.shared import make_request
 
-base_url = "http://web.archive.org/web/"
+base_url = "http://web.archive.org/save/"
 
 
-def exists(url):
+def save(url):
     """
     Test whether or not a page exists in the internet archive
     :param url: A URL stripped of querystrings

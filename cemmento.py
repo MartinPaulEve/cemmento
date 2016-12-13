@@ -1,5 +1,6 @@
 from flask import Flask
 from storage.internetarchive.query import exists
+from storage.internetarchive.store import save
 
 app = Flask(__name__)
 
@@ -13,10 +14,14 @@ def proxy_startup(url):
     """
 
     if exists(url):
+        # redirect to the correct URL
         return '{0} is in the internet archive'.format(url)
     else:
-        return '{0} is not in the internet archive'.format(url)
-
+        if save(url):
+            # redirect to the correct URL
+            pass
+        else:
+            return 'Unable to service request for {0}'.format(url)
 
 
 if __name__ == '__main__':
