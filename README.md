@@ -8,5 +8,8 @@ The proxy then queries the storage engine to see if a copy has been archived. If
 
 The default storage engine is the Internet Archive. The default redirect engine is hypothes.is.
 
+#Known Issues
+Links are likely to be broken on the Wayback Machine version.
+
 #Credits
-Cemmento was written by Martin Paul Eve and Alex Gil. It is copyright 2016. With thanks to Ben Armintor for a design chat.
+Cemmento was written by Martin Paul Eve and Alex Gil. It is copyright 2016. With thanks to Ben Armintor for a design chat. Alex's contribution is part of the work of the group for experimental methods at Columbia University. He promises a web page soon.
