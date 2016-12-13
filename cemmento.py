@@ -1,7 +1,7 @@
 from flask import Flask
-from storage.internetarchive.query import exists
+from storage.internetarchive.query import exists, base_url
 from storage.internetarchive.store import save
-from urllib.parse import urlparse, urlunparse
+from redirect.hypothesis import redirecto
 
 app = Flask(__name__)
 
@@ -17,11 +17,11 @@ def proxy_startup(url):
 
     if exists(url):
         # redirect to the correct URL
-        return '{0} is in the internet archive'.format(url)
+        return redirecto("{0}{1}?cemmento".format(base_url, url))
     else:
         if save(url):
             # redirect to the correct URL
-            pass
+            return redirecto("{0}{1}?cemmento".format(base_url, url))
         else:
             return 'Unable to service request for {0}'.format(url)
 
@@ -32,9 +32,7 @@ def clean_url(url):
     :param url: The URL
     :return: A clean URL
     """
-    parsed = urlparse(url)
-    scheme, netloc, path, params, query, fragment = parsed
-    return urlunparse((scheme, netloc, path.split('/')[1], '', '', ''))
+    return url[:url.find('?')]
 
 if __name__ == '__main__':
     app.run()
