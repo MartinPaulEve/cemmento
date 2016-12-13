@@ -8,6 +8,11 @@ The proxy then queries the storage engine to see if a copy has been archived. If
 
 The default storage engine is the Internet Archive. The default redirect engine is hypothes.is.
 
+Cemmento is designed to be agnostic in terms of storage engine and annotation platform, although at present only the internet archive (storage) and hypothesis (annotation) are written.
+
+#Expected Default Behaviour
+Users will be redirected to an internet archive version of the requested URL with the hypothesis annotation sidebar loaded.
+
 #Known Issues
 Links are likely to be broken on the Wayback Machine version.
 
