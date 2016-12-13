@@ -4,7 +4,7 @@ from storage.internetarchive.store import save
 from redirect.hypothesis import redirecto
 
 app = Flask(__name__)
-
+application = app
 
 @app.route('/<path:url>')
 def proxy_startup(url):
